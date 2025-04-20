@@ -108,6 +108,8 @@ public class Calculator {
      * entfernt und der Inhalt fortan als positiv interpretiert.
      */
     public void pressNegativeKey() {
+
+
         screen = screen.startsWith("-") ? screen.substring(1) : "-" + screen;
     }
 
@@ -121,7 +123,7 @@ public class Calculator {
      * und das Ergebnis direkt angezeigt.
      */
     public void pressEqualsKey() {
-
+        if (latestOperation.isEmpty()) return;
 
         var result = switch(latestOperation) {
             case "+" -> latestValue + Double.parseDouble(screen);

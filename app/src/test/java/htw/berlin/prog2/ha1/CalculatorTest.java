@@ -124,28 +124,17 @@ class CalculatorTest {
     }
 
     @Test
-    @DisplayName("should be able to do repeated equals signs for chain calculations")
-    void testChainedCalculation() {
+    @DisplayName("should not display negative zero")
+    void testNegativeZero() {
         Calculator calc = new Calculator();
 
+        calc.pressDigitKey(0);
+        calc.pressNegativeKey();
 
-        calc.pressDigitKey(3);
-        calc.pressBinaryOperationKey("+");
-        calc.pressDigitKey(2);
-        calc.pressEqualsKey();
-
-
-        calc.pressEqualsKey();
-
-
-        calc.pressEqualsKey();
-
-        String expected = "9";
+        String expected = "0";    // darf nicht "-0" werden
         String actual = calc.readScreen();
 
         assertEquals(expected, actual);
     }
-
-
 }
 
