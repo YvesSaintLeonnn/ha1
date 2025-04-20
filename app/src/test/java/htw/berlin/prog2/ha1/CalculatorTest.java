@@ -122,5 +122,30 @@ class CalculatorTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    @DisplayName("should be able to do repeated equals signs for chain calculations")
+    void testChainedCalculation() {
+        Calculator calc = new Calculator();
+
+
+        calc.pressDigitKey(3);
+        calc.pressBinaryOperationKey("+");
+        calc.pressDigitKey(2);
+        calc.pressEqualsKey();
+
+
+        calc.pressEqualsKey();
+
+
+        calc.pressEqualsKey();
+
+        String expected = "9";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
+
+
 }
 
