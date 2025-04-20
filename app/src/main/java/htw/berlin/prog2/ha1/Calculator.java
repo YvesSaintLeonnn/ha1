@@ -31,7 +31,8 @@ public class Calculator {
     public void pressDigitKey(int digit) {
         if(digit > 9 || digit < 0) throw new IllegalArgumentException();
 
-
+        int digitCount = screen.replace(".", "").replace("-", "").length();
+        if(digitCount >= 10) return;
 
         if(screen.equals("0") || latestValue == Double.parseDouble(screen)) screen = "";
 

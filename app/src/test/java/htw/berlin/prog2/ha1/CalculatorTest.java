@@ -116,6 +116,7 @@ class CalculatorTest {
             calc.pressDigitKey(1);
         }
 
+
         String expected = "1111111111";
         String actual = calc.readScreen();
 
