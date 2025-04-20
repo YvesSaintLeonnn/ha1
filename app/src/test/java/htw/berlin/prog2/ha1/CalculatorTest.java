@@ -105,5 +105,21 @@ class CalculatorTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    @DisplayName("should not allow more than ten digits")
+    void testMaxDigitLimit() {
+        Calculator calc = new Calculator();
+
+
+        for (int i = 0; i < 12; i++) {
+            calc.pressDigitKey(1);
+        }
+
+        String expected = "1111111111";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
 }
 
