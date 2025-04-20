@@ -131,7 +131,7 @@ class CalculatorTest {
         calc.pressDigitKey(0);
         calc.pressNegativeKey();
 
-        String expected = "0";    // darf nicht "-0" werden
+        String expected = "0";
         String actual = calc.readScreen();
 
         assertEquals(expected, actual);
